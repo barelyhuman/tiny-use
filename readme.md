@@ -7,10 +7,10 @@ Invisible if you squint hard enough
 ## Why ?
 
 I've written this in my experimentals sink for over 1.5 years now, the first
-public version of the same this is available here
+public version of the same is available here
 [barelyhuman/http/middleware](https://github.com/barelyhuman/http/blob/b7ee273a0ba98bebd857ad7e8ee4324970629eb2/src/middleware.js).
 
-I made it even smaller and more contained to reduce the middleware engine's load
+I made it to be small and contained to reduce the middleware's load
 on node's server.
 
 With respect to:
