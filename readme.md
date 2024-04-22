@@ -51,6 +51,10 @@ http.createServer(
 )
 ```
 
+## Ecosystem 
+
+You don't have to rebuild an ecosystem, most of what `connect` has and what express uses should be usable.
+
 ## License
 
 [MIT](/LICENSE)
