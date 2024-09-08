@@ -5,8 +5,8 @@ type MiddlewareFunc = (
   res: ServerResponse<IncomingMessage> & {
     req: IncomingMessage
   },
-  next: () => Promise<void>
-) => Promise<void>
+  next: () => void | Promise<void>
+) => void | Promise<void>
 
 export const use = <IncomingMessageT extends IncomingMessage>(
   ...list: MiddlewareFunc[]
