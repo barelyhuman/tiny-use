@@ -43,7 +43,8 @@
     "lint:pkg": "publint",
     "next": "bumpp",
     "test": "ava ./test/**/*.test.ts",
-    "test:ci": "c8 pnpm test",
+    "test:ci": "c8 -r text -r json-summary pnpm test",
+    "make-badges": "coverage-badges --style flat -o ./docs/badges.svg",
     "prepublishOnly": "npm run build"
   },
   "lint-staged": {
@@ -64,6 +65,7 @@
     "borp": "^0.17.0",
     "bumpp": "^9.5.2",
     "c8": "^10.1.2",
+    "coverage-badges-cli": "^2.0.0",
     "esbuild-register": "^3.6.0",
     "lint-staged": "^15.2.10",
     "precommit": "^1.2.2",

@@ -2,6 +2,8 @@
 
 > The tiniest middleware library for node's HTTP
 
+![Coverage](./docs/badges.svg)
+
 Invisible if you squint hard enough
 
 ## Why ?
