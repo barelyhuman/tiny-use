@@ -19,6 +19,14 @@
       },
       "require": "./dist/index.js",
       "import": "./dist/index.mjs"
+    },
+    "./fetch": {
+      "types": {
+        "require": "./dist/fetch.d.ts",
+        "import": "./dist/fetch.d.mts"
+      },
+      "require": "./dist/fetch.js",
+      "import": "./dist/fetch.mjs"
     }
   },
   "main": "./dist/index.js",
@@ -28,13 +36,12 @@
     "src"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "build": "tsup",
     "dev": "npm run build -- --watch src",
     "fix": "prettier --write .",
     "fix:pkg": "sort-package-json",
     "lint:pkg": "publint",
     "next": "bumpp",
-    "prepare": "husky install",
     "prepublishOnly": "npm run build"
   },
   "lint-staged": {
@@ -43,18 +50,22 @@
       "nr fix:pkg"
     ]
   },
+  "precommit": [
+    "lint-staged"
+  ],
   "prettier": "@barelyhuman/prettier-config",
   "devDependencies": {
-    "@antfu/ni": "^0.21.12",
+    "@antfu/ni": "^0.23.0",
     "@barelyhuman/prettier-config": "^1.1.0",
-    "@types/node": "^20.12.7",
-    "bumpp": "^9.4.0",
-    "husky": "^9.0.11",
-    "lint-staged": "^15.2.2",
-    "prettier": "^3.2.5",
-    "publint": "^0.2.7",
-    "sort-package-json": "^2.10.0",
-    "tsup": "^8.0.2"
+    "@types/node": "^20.16.5",
+    "bumpp": "^9.5.2",
+    "lint-staged": "^15.2.10",
+    "precommit": "^1.2.2",
+    "prettier": "^3.3.3",
+    "publint": "^0.2.10",
+    "sort-package-json": "^2.10.1",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4"
   },
   "publishConfig": {
     "access": "public"
