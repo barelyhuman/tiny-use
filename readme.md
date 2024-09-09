@@ -98,7 +98,7 @@ export default {
 }
 ```
 
-> [!NOTE]:  
+> [!NOTE]
 > When using the fetch based API, you might need to also add a bundling step if
 > the tool you use doesn't do the bundling for you
 
