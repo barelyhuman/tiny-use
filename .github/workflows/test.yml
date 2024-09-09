@@ -1,0 +1,22 @@
+name: Test
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  test:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - name: Install
+        run: pnpm install
+      - name: Test and Coverage
+        run: pnpm test:ci
+      - name: make badges
+        run: pnpm make-badges
+      - uses: stefanzweifel/git-auto-commit-action@v4
